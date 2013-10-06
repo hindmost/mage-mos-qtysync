@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mos_QtySync>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mos_QtySync>
+    </modules>
+</config>

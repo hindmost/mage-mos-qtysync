@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <cataloginventory>
+            <groups>
+                <qtysync translate="label">
+                    <label>MerchantOS Qty Sync Settings</label>
+                    <sort_order>800</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <api_key translate="label">
+                            <label>API key</label>
+                            <comment><![CDATA[mandatory field (see <a href="http://www.lightspeedretail.com/cloud/help/developers/api/getting-api-key" target="_blank">here</a> for details)]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_key>
+                        <api_id translate="label">
+                            <label>API Customer ID</label>
+                            <comment>leave empty to use autoloading value</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_id>
+                        <api_url_account translate="label">
+                            <label>API Account Control URL</label>
+                            <comment>leave empty to use default value</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_url_account>
+                        <api_url_session translate="label">
+                            <label>API Session Control URL</label>
+                            <comment>leave empty to use default value</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_url_session>
+                        <shop_id translate="label">
+                            <label>MerchantOS Shop ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </shop_id>
+                        <sku_field translate="label">
+                            <label>SKU field name to match</label>
+                            <comment>MerchantOS SKU field name used to search matches of products in MerchantOS and Magento</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sku_field>
+                        <read_buffer translate="label">
+                            <label>API Read buffer size</label>
+                            <comment>max. number of items requested in one API Read Call</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </read_buffer>
+                        <cron_time translate="label">
+                            <label>Cron Run - Start Time</label>
+                            <comment>time in GMT format</comment>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cron_time>
+                        <cron_frequency translate="label">
+                            <label>Cron Run - Frequency</label>
+                            <comment>if the Weekly option selected, the current day of the week will be used for the cron shedule</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_cron_frequency</source_model>
+                            <backend_model>qtysync/config_cron</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cron_frequency>
+                        <show_import_btn translate="label">
+                            <label>Show Import Button</label>
+                            <comment>show import button at the admin's products management page</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </show_import_btn>
+                    </fields>
+                </qtysync>
+            </groups>
+        </cataloginventory>
+    </sections>  
+</config>

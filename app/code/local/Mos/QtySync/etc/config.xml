@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mos_QtySync>
+            <version>0.1.0</version>
+        </Mos_QtySync>
+    </modules>
+
+    <global> 
+        <models>
+            <qtysync>
+                <class>Mos_QtySync_Model</class>
+            </qtysync>
+        </models>
+        <events>
+            <checkout_submit_all_after>
+                <observers>
+                    <mos_qtysync_model_observer>
+                        <type>singleton</type>
+                        <class>Mos_QtySync_Model_Observer</class>
+                        <method>handleOrderSubmit</method>
+                    </mos_qtysync_model_observer>
+                </observers>
+            </checkout_submit_all_after>
+        </events>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product>Mos_QtySync_Block_Adminhtml_Catalog_Product</catalog_product>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <qtysync>
+                <class>Mos_QtySync_Helper</class>
+            </qtysync>
+        </helpers>
+    </global>
+
+    <admin>
+        <routers>
+            <qtysync>
+                <use>admin</use>
+                <args>
+                    <module>Mos_QtySync_Adminhtml</module>
+                    <frontName>qtysync</frontName>
+                </args>
+            </qtysync>
+        </routers>
+    </admin>
+
+    <crontab>
+        <jobs>
+            <qtysync_import>
+                <run>
+                    <model>qtysync/sync::runImport</model>
+                </run>
+            </qtysync_import>
+        </jobs>
+    </crontab>
+
+    <default>
+        <cataloginventory>
+            <qtysync>
+                <enable>0</enable>
+                <shop_id>1</shop_id>
+                <sku_field>customSku</sku_field>
+                <read_buffer>200</read_buffer>
+                <cron_time/>
+                <cron_frequency>D</cron_frequency>
+                <show_import_btn>0</show_import_btn>
+            </qtysync>
+        </cataloginventory>
+    </default>
+</config>
